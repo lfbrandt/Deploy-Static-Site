@@ -1,0 +1,60 @@
+{
+  "slug": "oficina-modelo",
+  "company_name": "Oficina Modelo",
+  "primary_color": "#000000",
+  "secondary_color": "#333333",
+  "light_bg": "#f7f7f7",
+  "text_color": "#333333",
+  "font_family": "'Roboto', sans-serif",
+  "meta_description": "Site profissional e personalizável para oficinas mecânicas, com design limpo.",
+  "meta_keywords": "oficina mecânica, mecânico, serviços automotivos, revisão, troca de óleo",
+  "video_src": "static/videos/WhatsApp Video 2025-05-09 at 14.52.09.mp4",
+  "hero": {
+    "title": "Excelência em Mecânica Leve",
+    "text": "Profissionalismo, confiança e agilidade para o seu veículo.",
+    "cta_text": "Agende Agora"
+  },
+  "menu": [
+    { "href": "#services",     "label": "Serviços" },
+    { "href": "#testimonials", "label": "Depoimentos" },
+    { "href": "#contact",      "label": "Contato" }
+  ],
+  "services": [
+    {
+      "icon": "static/oleo.png",
+      "title": "Troca de Óleo",
+      "desc": "Filtros e lubrificantes de alta qualidade."
+    },
+    {
+      "icon": "static/revisao.png",
+      "title": "Revisão Completa",
+      "desc": "Inspeção detalhada para sua segurança."
+    },
+    {
+      "icon": "static/alinhamento.png",
+      "title": "Alinhamento",
+      "desc": "Estabilidade e conforto na pilotagem."
+    }
+  ],
+  "testimonials": [
+    { "name": "Ana Silva",  "text": "Atendimento excelente e rápido, recomendo sem dúvidas!" },
+    { "name": "Pedro Souza","text": "Profissionais competentes, meu carro ficou como novo." }
+  ],
+  "social_previews": {
+    "instagram": "INSTAGRAM_POST_URL",
+    "facebook":  "FACEBOOK_POST_URL"
+  },
+  "contact": {
+    "whatsapp_number":  "5599999999999",
+    "whatsapp_message": "Olá, gostaria de mais informações.",
+    "map_center": { "lat": -25.4296, "lng": -49.2785 },
+    "map_zoom": 13
+  },
+  "footer_text": "&copy; 2025 Oficina Modelo. Todos os direitos reservados.",
+  "social_links": [
+    { "icon": "https://img.icons8.com/ios-filled/30/ffffff/whatsapp.png",     "url": "https://wa.me/5599999999999" },
+    { "icon": "https://img.icons8.com/ios-filled/30/ffffff/instagram-new.png","url": "https://www.instagram.com"      },
+    { "icon": "https://img.icons8.com/ios-filled/30/ffffff/facebook.png",     "url": "https://facebook.com"           }
+  ],
+  "google_maps_api_key":  "AIzaSyCEHcb9sTlKmUds9XWMmRiT6eG4bBoevuM"
+}

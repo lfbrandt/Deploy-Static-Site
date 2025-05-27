@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="{{ meta_description }}" />
+  <meta name="keywords"    content="{{ meta_keywords }}" />
+  <title>{{ company_name }}</title>
+
+  <!-- Tema dinâmico -->
+  <style>
+    :root {
+      --primary:     {{ primary_color }};
+      --secondary:   {{ secondary_color }};
+      --light-bg:    {{ light_bg }};
+      --text-color:  {{ text_color }};
+      --font-family: {{ font_family }};
+    }
+  </style>
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="./static/styles.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <a href="#" class="logo">{{ company_name }}</a>
+      <nav>
+        <ul class="menu">
+          {% for item in menu %}
+            <li><a href="{{ item.href }}">{{ item.label }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <video class="video-bg" autoplay muted loop playsinline>
+      <source src="{{ video_src }}" type="video/mp4" />
+      Seu navegador não suporta vídeo em background.
+    </video>
+    <div class="hero-content">
+      <h1>{{ hero.title }}</h1>
+      <p>{{ hero.text }}</p>
+      <button class="cta-button">{{ hero.cta_text }}</button>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="services">
+    <div class="container">
+      <h2>Nossos Serviços</h2>
+      <div class="services-grid">
+        {% for svc in services %}
+          <div class="service-box">
+            <img src="{{ svc.icon }}" alt="{{ svc.title }}">
+            <h3>{{ svc.title }}</h3>
+            <p>{{ svc.desc }}</p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="testimonials">
+    <div class="container">
+      <h2>Depoimentos</h2>
+      {% for t in testimonials %}
+        <div class="testimonial">
+          <p>“{{ t.text }}”</p>
+          <cite>– {{ t.name }}</cite>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- Social previews -->
+  <section class="social-previews container">
+    <div id="instagram-post">
+      <img src="{{ social_previews.instagram }}" alt="Última postagem Instagram" loading="lazy">
+    </div>
+    <div id="facebook-post">
+      <img src="{{ social_previews.facebook }}" alt="Última postagem Facebook" loading="lazy">
+    </div>
+  </section>
+
+  <!-- Contact & Map -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Contato via WhatsApp</h2>
+      <div class="whatsapp-generator">
+        <label for="wa-number">Número do WhatsApp:</label>
+        <input type="tel" id="wa-number" value="{{ contact.whatsapp_number }}" />
+        <label for="wa-message">Mensagem (opcional):</label>
+        <textarea id="wa-message" rows="3">{{ contact.whatsapp_message }}</textarea>
+        <button id="wa-generate" class="cta-button">Gerar Link e Abrir</button>
+      </div>
+      <div id="map" style="margin-top:2rem; width:100%; height:250px; border-radius:6px;"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>{{ footer_text | safe }}</p>
+      <div class="social-fixed">
+        {% for link in social_links %}
+          <a href="{{ link.url }}"><img src="{{ link.icon }}" alt="" /></a>
+        {% endfor %}
+      </div>
+    </div>
+  </footer>
+
+  {# Expondo configurações para o JS #}
+  <script>
+    window.mapConfig = {
+      center: { lat: {{ contact.map_center.lat }}, lng: {{ contact.map_center.lng }} },
+      zoom:   {{ contact.map_zoom }}
+    };
+    window.socialPreviews = {
+      instagram: "{{ social_previews.instagram }}",
+      facebook:  "{{ social_previews.facebook }}"
+    };
+  </script>
+
+  <!-- Seu JS principal (define initMap e trata WhatsApp/socials) -->
+  <script src="./static/script.js"></script>
+
+  <!-- Google Maps API (chave dinâmica e callback) -->
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key={{ google_maps_api_key }}&callback=initMap">
+  </script>
+</body>
+</html>
