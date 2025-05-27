@@ -8,7 +8,7 @@
   "font_family": "'Roboto', sans-serif",
   "meta_description": "Site profissional e personalizável para oficinas mecânicas, com design limpo.",
   "meta_keywords": "oficina mecânica, mecânico, serviços automotivos, revisão, troca de óleo",
-  "video_src": "static/videos/WhatsApp Video 2025-05-09 at 14.52.09.mp4",
+  "video_src": "videos/WhatsApp Video 2025-05-09 at 14.52.09.mp4",
   "hero": {
     "title": "Excelência em Mecânica Leve",
     "text": "Profissionalismo, confiança e agilidade para o seu veículo.",
@@ -21,17 +21,17 @@
   ],
   "services": [
     {
-      "icon": "static/oleo.png",
+      "icon": "oleo.png",
       "title": "Troca de Óleo",
       "desc": "Filtros e lubrificantes de alta qualidade."
     },
     {
-      "icon": "static/revisao.png",
+      "icon": "revisao.png",
       "title": "Revisão Completa",
       "desc": "Inspeção detalhada para sua segurança."
     },
     {
-      "icon": "static/alinhamento.png",
+      "icon": "alinhamento.png",
       "title": "Alinhamento",
       "desc": "Estabilidade e conforto na pilotagem."
     }
@@ -55,6 +55,5 @@
     { "icon": "https://img.icons8.com/ios-filled/30/ffffff/whatsapp.png",     "url": "https://wa.me/5599999999999" },
     { "icon": "https://img.icons8.com/ios-filled/30/ffffff/instagram-new.png","url": "https://www.instagram.com"      },
     { "icon": "https://img.icons8.com/ios-filled/30/ffffff/facebook.png",     "url": "https://facebook.com"           }
-  ],
-  "google_maps_api_key":  "AIzaSyCEHcb9sTlKmUds9XWMmRiT6eG4bBoevuM"
+  ]
 }

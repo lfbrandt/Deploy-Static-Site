@@ -4,13 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Site profissional e personalizável para oficinas mecânicas, com design limpo." />
-  <meta name="keywords"    content="oficina mecânica, mecânico, serviços automotivos, revisão, troca de óleo" />
+  <meta name="keywords" content="oficina mecânica, mecânico, serviços automotivos, revisão, troca de óleo" />
   <title>Oficina Modelo</title>
 
   <!-- Tema dinâmico -->
- 
+  <style>
+    
+    :root {
+      --primary:     #000000;
+      --secondary:   #333333;
+      --light-bg:    #f7f7f7;
+      --text-color:  #333333;
+      --font-family: 'Roboto', sans-serif;
+    }
+    
+  </style>
+
   <!-- CSS externo -->
-  <link rel="stylesheet" href="./static/styles.css" />
+  <link rel="stylesheet" href="static/styles.css" />
+
+  <!-- Leaflet CSS (OpenStreetMap) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
 <body>
 
@@ -41,7 +55,9 @@
     <div class="hero-content">
       <h1>Excelência em Mecânica Leve</h1>
       <p>Profissionalismo, confiança e agilidade para o seu veículo.</p>
+      
       <button class="cta-button">Agende Agora</button>
+      
     </div>
   </section>
 
@@ -52,19 +68,19 @@
       <div class="services-grid">
         
           <div class="service-box">
-            <img src="static/oleo.png" alt="Troca de Óleo">
+            <img src="static/oleo.png" alt="Troca de Óleo" />
             <h3>Troca de Óleo</h3>
             <p>Filtros e lubrificantes de alta qualidade.</p>
           </div>
         
           <div class="service-box">
-            <img src="static/revisao.png" alt="Revisão Completa">
+            <img src="static/revisao.png" alt="Revisão Completa" />
             <h3>Revisão Completa</h3>
             <p>Inspeção detalhada para sua segurança.</p>
           </div>
         
           <div class="service-box">
-            <img src="static/alinhamento.png" alt="Alinhamento">
+            <img src="static/alinhamento.png" alt="Alinhamento" />
             <h3>Alinhamento</h3>
             <p>Estabilidade e conforto na pilotagem.</p>
           </div>
@@ -77,27 +93,29 @@
   <section id="testimonials" class="testimonials">
     <div class="container">
       <h2>Depoimentos</h2>
-      
-        <div class="testimonial">
-          <p>“Atendimento excelente e rápido, recomendo sem dúvidas!”</p>
-          <cite>– Ana Silva</cite>
-        </div>
-      
-        <div class="testimonial">
-          <p>“Profissionais competentes, meu carro ficou como novo.”</p>
-          <cite>– Pedro Souza</cite>
-        </div>
-      
+      <div class="testimonials-list">
+        
+          <div class="testimonial">
+            <p>“Atendimento excelente e rápido, recomendo sem dúvidas!”</p>
+            <cite>– Ana Silva</cite>
+          </div>
+        
+          <div class="testimonial">
+            <p>“Profissionais competentes, meu carro ficou como novo.”</p>
+            <cite>– Pedro Souza</cite>
+          </div>
+        
+      </div>
     </div>
   </section>
 
-  <!-- Social previews -->
+  <!-- Social Previews -->
   <section class="social-previews container">
     <div id="instagram-post">
-      <img src="INSTAGRAM_POST_URL" alt="Última postagem Instagram" loading="lazy">
+      <img src="INSTAGRAM_POST_URL" alt="Última postagem Instagram" loading="lazy" />
     </div>
     <div id="facebook-post">
-      <img src="FACEBOOK_POST_URL" alt="Última postagem Facebook" loading="lazy">
+      <img src="FACEBOOK_POST_URL" alt="Última postagem Facebook" loading="lazy" />
     </div>
   </section>
 
@@ -112,7 +130,7 @@
         <textarea id="wa-message" rows="3">Olá, gostaria de mais informações.</textarea>
         <button id="wa-generate" class="cta-button">Gerar Link e Abrir</button>
       </div>
-      <div id="map" style="margin-top:2rem; width:100%; height:250px; border-radius:6px;"></div>
+      <div id="map" style="margin-top:2rem; width:100%; height:300px; border-radius:6px;"></div>
     </div>
   </section>
 
@@ -132,11 +150,11 @@
     </div>
   </footer>
 
-  
+  <!-- Expondo configurações para o JS -->
   <script>
     window.mapConfig = {
-      center: { lat: -25.4296, lng: -49.2785 },
-      zoom:   13
+      center: [-25.4296, -49.2785],
+      zoom: 13
     };
     window.socialPreviews = {
       instagram: "INSTAGRAM_POST_URL",
@@ -144,12 +162,9 @@
     };
   </script>
 
-  <!-- Seu JS principal (define initMap e trata WhatsApp/socials) -->
-  <script src="./static/script.js"></script>
-
-  <!-- Google Maps API (chave dinâmica e callback) -->
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCEHcb9sTlKmUds9XWMmRiT6eG4bBoevuM&callback=initMap">
-  </script>
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <!-- Script principal -->
+  <script src="static/script.js"></script>
 </body>
 </html>
